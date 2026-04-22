@@ -1,4 +1,4 @@
-# FoodieForDaFam 🥘👨‍🍳
+# FoodieForDaFam 
 
 Family food app connecting chefs, shoppers, volunteers for home meals. Java backend + React frontend.
 
