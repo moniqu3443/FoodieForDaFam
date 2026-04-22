@@ -54,7 +54,7 @@ java FoodieForDaFam.Main
 - Roles: USER/CHEF/SHOPPER/VOLUNTEER.
 - Responsive Tailwind UI, hot reload.
 
-## 🖱️ How To Use
+## How To Use
 1. **Open** http://localhost:5173
 2. **Register**: Fill form, select role (e.g., CHEF), submit → Success message.
 3. **Login**: Use registered username/password → Welcome on Home.
