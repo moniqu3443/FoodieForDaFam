@@ -1,4 +1,4 @@
-# FoodieForDaFam 
+# FoodieForDaFam 🥘👨‍🍳
 
 Family food app connecting chefs, shoppers, volunteers for home meals. Java backend + React frontend.
 
@@ -50,10 +50,17 @@ java FoodieForDaFam.Main
 - Port busy? Kill process or `npm run dev -- --port 3000`
 
 ## Features
-- User registration/login (password hash/salt mock).
-- Roles: User/Chef/Shopper/Volunteer.
-- Responsive Tailwind UI.
-- In-memory storage (mock).
+- User registration/login (mock password hash/salt).
+- Roles: USER/CHEF/SHOPPER/VOLUNTEER.
+- Responsive Tailwind UI, hot reload.
+
+## 🖱️ How To Use
+1. **Open** http://localhost:5173
+2. **Register**: Fill form, select role (e.g., CHEF), submit → Success message.
+3. **Login**: Use registered username/password → Welcome on Home.
+4. **Demo backend**: Terminal shows Java console matching frontend actions.
+5. **Customize**: Edit src/App.tsx → Instant reload.
+6. **Stop**: Ctrl+C in terminal.
 
 ## Tech Stack
 - Frontend: React 18, Vite, TypeScript, Tailwind CSS, React Router.
