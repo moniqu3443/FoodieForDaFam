@@ -12,7 +12,7 @@ Family food app connecting chefs, shoppers, volunteers for home meals. Java back
 
 ### 1. Clone Repo
 ```bash
-git clone https://github.com/YOUR_USERNAME/FoodieForDaFam.git
+git clone https://github.com/moniqu3443/FoodieForDaFam.git
 cd FoodieForDaFam
 code .  # Opens in VS Code
 ```
@@ -48,11 +48,6 @@ java FoodieForDaFam.Main
 - Node not found? Install LTS from nodejs.org
 - Java? `java -version` (JDK 21+)
 - Port busy? Kill process or `npm run dev -- --port 3000`
-
-## Features
-- User registration/login (mock password hash/salt).
-- Roles: USER/CHEF/SHOPPER/VOLUNTEER.
-- Responsive Tailwind UI, hot reload.
 
 ## 🖱️ How To Use
 1. **Open** http://localhost:5173
