@@ -1,123 +1,94 @@
-# FoodieForDaFam 
+FoodieForDaFam
 
-Family food app connecting chefs, shoppers, volunteers for home meals.
-Java CLI Backend (fully functional).
+Family food app connecting chefs, shoppers, and volunteers for home meals.
+Java CLI Backend (fully functional)
 
 Website Template (Figma):
 https://guard-book-56368466.figma.site/l
 
-
-========================
 CURRENT STATUS
-========================
-- Backend: Java CLI apps with roles, inventory management, grocery orders, alerts.
-  - ConsoleUserInterface: Interactive role menus (Shopper orders work!)
-  - FoodieForDaFam.Main: User registration + polymorphism demo
-  - GroceryOrderManager: Inventory + order system using inventory.txt
 
+Backend (Java CLI):
 
-========================
-SETUP & RUN (TERMINAL)
-========================
+ConsoleUserInterface → Interactive role menus (Shopper orders working)
+FoodieForDaFam.Main → User registration + polymorphism demo
+GroceryOrderManager → Inventory + order system using inventory.txt
 
-STEP 1 — Check Java Version
-Run this in terminal:
+SETUP AND RUN
+
+PREREQUISITES
+Run in terminal:
 java -version
 
-(You need JDK 21+)
+Requirement: JDK 21+
 
-
-STEP 2 — Clone the Repository
+CLONE REPOSITORY
 Run:
 git clone https://github.com/moniqu3443/FoodieForDaFam.git
 
 Then:
 cd FoodieForDaFam
 
-
-========================
 RUN THE PROGRAMS
-========================
 
-OPTION A — Main Demo (Console UI)  [RECOMMENDED]
-Run these commands:
+OPTION A — CONSOLE UI (RECOMMENDED)
 
+Run:
 javac -d out ConsoleUserInterface.java
 java -cp out ConsoleUserInterface
 
-Then in the program:
+Inside the program:
 1 → Shopper
 1 → Place Order
 Enter: 001, Milk, 2
 2 → Check Orders
 
+OPTION B — INVENTORY AND ORDERS SYSTEM
 
-------------------------
-
-OPTION B — Inventory + Orders System
-
-First move into folder:
+Run:
 cd FoodieForDaFam
-
-Then compile EVERYTHING:
 javac -d out $(find . -name "*.java")
-
-Then run:
 java -cp out Domain.GroceryOrderManager
 
 Features:
-- Loads inventory.txt
-- Place / view / cancel orders
-- Shows alerts
 
+Loads inventory.txt
+Place, view, and cancel orders
+Displays alerts
 
-------------------------
-
-OPTION C — User Demo
+OPTION C — USER DEMO
 
 Run:
 java -cp out FoodieForDaFam.Main
 
-
-------------------------
-
-OPTION D — Compile Everything (if needed)
+OPTION D — COMPILE EVERYTHING
 
 Run:
 find . -name "*.java" | xargs javac -d out/
 
-
-========================
 HOW TO TEST
-========================
 
-1. Start ConsoleUserInterface
-2. Choose Shopper
-3. Place Order:
-   ID: 001
-   Item: Milk
-   Quantity: 2
-4. Check Orders → confirm it saved
-5. Edit inventory.txt → test alerts
-6. Press 0 to exit
+Run ConsoleUserInterface
+Select 1 (Shopper)
+Select 1 (Place Order)
+Enter:
+ID: 001
+Item: Milk
+Quantity: 2
+Select 2 (Check Orders) to confirm it saved
+Edit inventory.txt to test alerts
+Press 0 to exit
 
-
-========================
 FUTURE PLANS
-========================
 
-- React Frontend (planned)
-  - Pages: Home, Register, Login, Orders
-  - Stack: React + Vite + TypeScript + Tailwind
-  - Will connect via API (Spring Boot or Quarkus)
+React Frontend
+Pages: Home, Register, Login, Orders
+Stack: React + Vite + TypeScript + Tailwind
+Backend connection: Spring Boot or Quarkus
+Database integration (MySQL or PostgreSQL)
+Full API endpoints
 
-- Real Database (MySQL/PostgreSQL)
-- Full API endpoints
-
-
-========================
 GITIGNORE
-========================
 
 out/
 *.class
