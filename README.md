@@ -1,76 +1,70 @@
 # FoodieForDaFam 🥘👨‍🍳
 
-Family food app connecting chefs, shoppers, volunteers for home meals. Java backend + React frontend.
+Family food app connecting chefs, shoppers, volunteers for home meals. **Java CLI Backend** (fully functional).
 
 ## Current Status
-- **Backend**: Java domain/services (User auth with roles: CHEF/SHOPPER/VOLUNTEER). Run `java FoodieForDaFam.Main` for console demo.
-- **Frontend**: Vite + React + TS + Tailwind. Live at http://localhost:5173 (npm run dev).
-  - Pages: Home, Register, Login (mock service simulates backend).
-- Spring Boot API removed per request.
+- **Backend**: Java CLI apps with roles, inventory management, grocery orders, alerts.
+  - `ConsoleUserInterface`: Interactive role menus (Shopper orders work!).
+  - `FoodieForDaFam.Main`: User registration + polymorphism demo.
+  - `FoodieForDaFam.Domain.GroceryOrderManager`: Full inventory/orders from inventory.txt.
 
-## Step-by-Step Setup (Clone → Run)
+## Step-by-Step Setup & Run
 
-### 1. Clone Repo
+### 1. Prerequisites
+```
+java -version  # JDK 21+
+```
+
+### 2. Clone
 ```bash
 git clone https://github.com/moniqu3443/FoodieForDaFam.git
 cd FoodieForDaFam
-code .  # Opens in VS Code
 ```
 
-### 2. Install VS Code Extensions (Terminal or GUI)
-**Terminal (code --install-extension)**:
+### 3. Backend Demos (Terminal: Ctrl+`)
+
+**Primary: ConsoleUserInterface (Shopper Orders)**
 ```bash
-code --install-extension dsznajder.es7-react-js-snippets
-code --install-extension bradlc.vscode-tailwindcss
+javac -d out ConsoleUserInterface.java
+java -cp out ConsoleUserInterface
 ```
+- `1` (Shopper) → `1` Place Order (ID/SKU/Qty) → `2` Check Orders. **Working!**
 
-**Or GUI**: Ctrl+Shift+X → Search/install above.
-
-### 3. Frontend (React App)
-Terminal 1 (Ctrl+`):
+**Inventory & Orders:**
 ```bash
-cd react-frontend
-npm install
-npm run dev
+cd FoodieForDaFam
+javac -d out \$(find . -name "*.java")
+java -cp out Domain.GroceryOrderManager
 ```
-- Opens http://localhost:5173 automatically
-- Hot reload on edits
+- Loads `inventory.txt`, place/view/cancel orders + alerts.
 
-### 4. Backend Demo (Java)
-Terminal 2 (Ctrl+Shift+`):
+**User Demo:**
 ```bash
-javac FoodieForDaFam/**/*.java
-java FoodieForDaFam.Main
+java -cp out FoodieForDaFam.Main  # From FoodieForDaFam/
 ```
-- Console demo: alice registers as CHEF, logs in
 
-### Troubleshooting
-- Node not found? Install LTS from nodejs.org
-- Java? `java -version` (JDK 21+)
-- Port busy? Kill process or `npm run dev -- --port 3000`
+**Compile All:** `find . -name "*.java" | xargs javac -d out/`
 
-## 🖱️ How To Use
-1. **Open** http://localhost:5173
-2. **Register**: Fill form, select role (e.g., CHEF), submit → Success message.
-3. **Login**: Use registered username/password → Welcome on Home.
-4. **Demo backend**: Terminal shows Java console matching frontend actions.
-5. **Customize**: Edit src/App.tsx → Instant reload.
-6. **Stop**: Ctrl+C in terminal.
+## How To Test
+1. Run ConsoleUserInterface → Shopper → Place Order: `001`, `Milk`, `2` → Success.
+2. Check Orders → Lists saved orders.
+3. Edit `FoodieForDaFam/inventory.txt` → Test alerts.
+4. `0` Exit.
 
-## Tech Stack
-- Frontend: React 18, Vite, TypeScript, Tailwind CSS, React Router.
-- Backend: Java 21.
+## Future Plans
+- **React Frontend** (planned): Connect to Java CLI via API layer (Spring Boot/Quarkus).
+  - Pages: Home, Register, Login, Orders.
+  - Stack: React + Vite + TypeScript + Tailwind.
+- Real DB (MySQL/PostgreSQL).
+- Full API endpoints.
 
-## Next Steps
-- Real API integration (Java Spring/Quarkus).
-- Recipes, grocery orders, real DB (MySQL?).
-- Auth tokens, state management (Zustand/Redux).
+## .gitignore
+```
+out/
+*.class
+.DS_Store
+FoodieForDaFam/out/
+```
 
-## Screenshots
-(Add after running: Home/Register/Login)
 
-![Home](screenshots/home.png)
-![Register](screenshots/register.png)
 
-## License
-MIT
