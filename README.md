@@ -4,7 +4,7 @@ Family food app connecting chefs, shoppers, and volunteers for home meals.
 Java CLI Backend (fully functional)
 
 Website Template (Figma):
-https://guard-book-56368466.figma.site/l
+https://guard-book-56368466.figma.site/
 
 
 --------------------------------------------------
